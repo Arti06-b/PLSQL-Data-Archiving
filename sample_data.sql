@@ -1,3 +1,20 @@
+CREATE TABLE transactions (
+    transaction_id NUMBER PRIMARY KEY,
+    transaction_date DATE,
+    customer_id NUMBER,
+    amount NUMBER,
+    status VARCHAR2(20)
+);
+
+CREATE TABLE transactions_archive (
+    transaction_id NUMBER PRIMARY KEY,
+    transaction_date DATE,
+    customer_id NUMBER,
+    amount NUMBER,
+    status VARCHAR2(20),
+    archive_date DATE
+);
+
 -- Inserting sample data into transactions table
 INSERT INTO transactions (transaction_id, transaction_date, customer_id, amount, status)
 VALUES (1, TO_DATE('2024-10-15', 'YYYY-MM-DD'), 101, 1000, 'Completed');
